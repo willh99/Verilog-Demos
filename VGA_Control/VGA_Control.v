@@ -88,29 +88,29 @@ module videosyncs (
    always @(posedge clk) 
 	begin
       if (hcont == htotal-1) 
-		begin
-         // Add codes here
-			hcont=0;
+	begin
+        	// Add codes here
+		hcont=0;
          if (vcont == vtotal-1) 
-			begin
-            // Add codes here
-				vcont=0;
+		begin
+            	// Add codes here
+		vcont=0;
          end
-         else 
-			begin
-            // Add codes here
-				vcont=vcont+1;
+	else 
+	begin
+        	// Add codes here
+		vcont=vcont+1;
          end
       end
       else 
-		begin
-         // Add codes here
-			hcont=hcont+1;
+	begin
+        // Add codes here
+	hcont=hcont+1;
       end
    end
 
    always @* 
-	begin
+   begin
       if (hcont<=hactive && vcont<=vactive)
          active_area = 1'b1;
       else
@@ -128,13 +128,13 @@ module videosyncs (
    always @* 
 	begin
       if (active_area) 
-		begin
+	begin
          gout = gin;
          rout = rin;
          bout = bin;
       end
       else 
-		begin
+	begin
          gout = 3'b0;
          rout = 3'b0;
          bout = 2'b0;
